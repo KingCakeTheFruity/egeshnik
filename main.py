@@ -123,6 +123,8 @@ class User:
         self.words[2].append(word)
 
     def to_lvl(self, word, level):
+        if word in self.prohibited:
+            return None
         if level == 'easy' or level == 0:
             self.to_easy(word)
         if level == 'medi' or level == 1:
